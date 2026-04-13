@@ -1,0 +1,56 @@
+
+.huita {
+    display: none;
+}
+
+.huita.ueban {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    z-index: 999;
+    white-space: nowrap;
+} 
+.score {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 10%;
+    transform: translateX(-80%);
+    background-color: #222;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    z-index: 999;
+    white-space: nowrap;
+}
+
+.voorinput {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    width: 30px;
+    height: 40px;
+    transform: translateX(-40%);
+    z-index: 997
+}
+.flex-container {
+    display: flex;
+
+}
+.foreground-gif {
+    position: fixed;
+    z-index: 998; 
+    bottom: 0;
+    left: 0;
+    width: 200px;
+}
