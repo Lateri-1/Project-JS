@@ -48,6 +48,7 @@
 
 }
 .foreground-gif {
+    background-image: ff;
     position: fixed;
     z-index: 998; 
     bottom: 0;
