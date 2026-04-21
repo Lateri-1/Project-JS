@@ -1,0 +1,54 @@
+// change background based on score
+
+
+// function ChangeGIF(score) { 
+//   if (score --) {
+//     document.querySelector('body').classList.toggle("second");
+//         setTimeout (function() {
+//       document.querySelector('.body').classList.remove("second");
+//     document.querySelector('body').style.backgroundImage = 
+//     'url(output_high_quality.gif?' + Date.now() + ')';}, 3000);
+//     }
+//   else if (score === 15) {
+//     document.querySelector('body').classList.toggle("second");
+//     setTimeout (function() {
+//     document.querySelector('.body').classList.remove("second");
+//     document.querySelector('body').style.backgroundImage = 
+//     'url(output_high_quality.gif?' + Date.now() + ')';}, 3000);
+//   }
+//   else if (score ++) {
+//     document.querySelector('body').classList.toggle("second");
+//     setTimeout (function() {
+//     document.querySelector('.body').classList.remove("second");
+//     document.querySelector('body').style.backgroundImage = 
+//     'url(output_high_quality.gif?' + Date.now() + ')';}, 3000);
+//     }
+//   }
+
+
+
+// the same thing but made other way
+
+// so the user will not see the white screen when the gif change
+let bgNormal = new Image();
+bgNormal.src = 'bg.gif';
+
+let bgGg = new Image();
+bgGg.src = 'gg.gif';
+// changegf
+function ChangeGIF(result) {
+
+  if (result === "GOOD") {
+      document.querySelector('body').style.backgroundImage= 'url(gg.gif)';
+      setTimeout(function() {
+      document.querySelector('body').style.backgroundImage= 'url(bg.gif)'},3000);
+    } else if (result === "NORM") {
+      document.querySelector('.body').style.backgroundImage= 'url(bg.gif)';
+    } else if (result === "TOO BAD") {
+      document.querySelector('.screen').style.Image ='url(hacked-hack.gif)';
+    }
+}
+
+
+// firstly load the background
+document.querySelector('body').style.backgroundImage = 'url(bg.gif?' + Date.now() + ')';

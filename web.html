@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body class="body" style="">
+    <body class="body">
         <header> 
             <div class="score">
                 <p id="score"></p>
@@ -17,13 +17,12 @@
 
 
 
-    <div class="flex-conteiner">
-        <img src="output.gif" class="foreground-gif">
-            <p id="exmpl" style="color:beige; transform: translateX(-50%); left: 50%;display: flex;align-items: center;position: fixed;bottom: 20px; z-index: 998; bottom: 140px;"></p>
-        <div class="voorinput">
-            <input type="text" id="answer">
-            <button id="chek" style="display: none;">Click me</button>
-        </div>
+    <div class="flex-container">
+        <img src="central.png" class="foreground-gif">
+            <p id="exmpl" class="p"></p>
+            <p class="gb"></p>
+            <input type="text" id="answer" class="voorinput" autocomplete="off" autofocus>
+        <button id="chek" style="display: none;">Click me</button>
     </div>
         <script src=functies.js> 
         </script>
