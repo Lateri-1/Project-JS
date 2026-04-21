@@ -78,16 +78,22 @@
     white-space: nowrap;
 }
 
-.voorinput {
-    display: flex;
-    align-items: center;
+/* обёртка получает fixed позицию */
+#shake-wrapper {
     position: fixed;
     bottom: 263px;
     left: 22%;
     width: 770px;
     height: 25px;
-    transform: translateX(-5.5%);
     z-index: 998;
+}
+
+/* поле ввода занимает всю обёртку */
+.voorinput {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     background-color: #222;
     color: green;
 }
@@ -102,8 +108,8 @@
 .foreground-gif {
     position: fixed;
     z-index: 997; 
-    bottom: 70px;
-    left: 50%;
+    bottom: 63px;
+    left: 52.3%;
     transform: translateX(-70%);
     width: 900px;
     height: 70%;
@@ -118,36 +124,43 @@
     transform: translateX(-9%); 
     left: 50%;
     display:flex;
-    left: 20%;
+    left: 23%;
     position:fixed; 
     z-index: 998; 
-    bottom: 290px;
-}
-.p.gg {
-    color:beigrgb(255, 255, 0);
-    transform: translateX(-9%); 
-    left: 50%;
-    display:flex;
-    left: 20%;
-    position:fixed; 
-    z-index: 998; 
-    bottom: 290px;
-}
-.p.nb {
-    color: red;
-    transform: translateX(-9%); 
-    left: 50%;
-    display:flex;
-    left: 20%;
-    position:fixed; 
-    z-index: 998; 
-    bottom: 290px;
-
+    bottom: 280px;
 }
 /* how it will be */
 @keyframes shake {
-    10%, 90% { transform: translate3d(-1px, 0, 0); }
-    20%, 80% { transform: translate3d(2px, 0, 0); }
-    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-    40%, 60% { transform: translate3d(4px, 0, 0); }
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    10%, 90% { transform: translate3d(-1px, 0, 0) scale(0.97); }
+    20%, 80% { transform: translate3d(2px, 0, 0) scale(0.95); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0) scale(0.9); }
+    40%, 60% { transform: translate3d(4px, 0, 0) scale(0.9); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+/* green if good */
+.glow-green::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 80px rgba(0, 255, 0, 0.4);
+    pointer-events: none;
+    z-index: 1000;
+    animation: fadeGlow 0.8s ease-out forwards;
+}
+
+/* red if bad */
+.glow-red::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 80px rgba(255, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: 1000;
+    animation: fadeGlow 0.8s ease-out forwards;
+}
+
+@keyframes fadeGlow {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
 }
